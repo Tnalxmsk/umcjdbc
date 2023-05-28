@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="52.15.116.22" id="02e19e2e-a977-4d5b-b3e8-0f352fe39b77" keyPath="C:\Users\alstn\muldaeng\umc.pem" port="22" nameFormat="DESCRIPTIVE" username="ubuntu" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>
