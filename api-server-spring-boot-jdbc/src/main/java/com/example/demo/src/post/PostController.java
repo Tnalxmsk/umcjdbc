@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 import static com.example.demo.config.BaseResponseStatus.INVALID_USER_JWT;
@@ -30,6 +31,23 @@ public class PostController {
         this.postProvider = postProvider;
         this.postService = postService;
         this.jwtService = jwtService;
+    }
+
+    /**
+     * 모든 게시물 조회 API
+     * [GET] /post
+     * @return BaseResponse<List<GetPostRes>>
+     */
+    @ResponseBody
+    @GetMapping("")
+    public BaseResponse<List<GetPostRes>> getPostsPaging() {
+        try {
+            List<GetPostRes> getPostRes = postProvider.getPostsPaging();
+            return new BaseResponse<>(getPostRes);
+        }
+        catch (BaseException exception) {
+            return new BaseResponse<>(exception.getStatus());
+        }
     }
 
     /**
@@ -136,5 +154,6 @@ public class PostController {
             return new BaseResponse<>((exception.getStatus()));
         }
     }
+
 
 }

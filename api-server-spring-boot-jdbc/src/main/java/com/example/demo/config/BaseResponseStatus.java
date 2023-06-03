@@ -58,6 +58,9 @@ public enum BaseResponseStatus {
     //[PATCH] /users/{userIdx}
     MODIFY_FAIL_USERNAME(false,HttpStatus.INTERNAL_SERVER_ERROR.value(),"유저네임 수정 실패"),
 
+    // [PATCH] /members/{memberIdx}
+    MODIFY_FAIL_MEMBER(false, HttpStatus.INTERNAL_SERVER_ERROR.value(), "멤버 수정 실패"),
+
     //[PATCH] /post/{postIdx}{userIdx}
     MODIFY_FAIL_POST(false, HttpStatus.INTERNAL_SERVER_ERROR.value(), "게시물 수정 실패"),
 
